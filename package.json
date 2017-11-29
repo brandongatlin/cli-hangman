@@ -1,0 +1,27 @@
+{
+  "name": "cli-hangman",
+  "version": "1.0.0",
+  "description": "cli hangman",
+  "main": "game.js",
+  "scripts": {
+    "test": "game"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandongatlin/cli-hangman.git"
+  },
+  "keywords": [
+    "hangman",
+    "cli",
+    "node"
+  ],
+  "author": "brandon gatlin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brandongatlin/cli-hangman/issues"
+  },
+  "homepage": "https://github.com/brandongatlin/cli-hangman#readme",
+  "dependencies": {
+    "inquirer": "^4.0.1"
+  }
+}
