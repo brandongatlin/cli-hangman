@@ -16,7 +16,7 @@ Word.prototype.makeLettersArray = function() {
   }
 
   return myArr;
-};
+}; //end makeLettersArray
 
 Word.prototype.display = function() {
   var myStr = "";
@@ -26,6 +26,17 @@ Word.prototype.display = function() {
   }
 
   return myStr;
-};
+}; //end display method
+
+//loop thru array and compare letters with guessed, then turn to true
+//create search method for this.
+
+// Word.prototype.search = function() {
+//   for (var i = 0; i < this.lettersArray.length; i++) {
+//     if (this.guess === true) {
+//       return this.letter;
+//     }
+//   }
+// }; //end search method
 
 module.exports = Word;

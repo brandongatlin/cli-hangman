@@ -22,9 +22,12 @@ var currentWord = new Word(randomWord);
 
 var randomWordLength = randomWord.length;
 
-currentWord.lettersArray[2].guessed = true;
+// currentWord.lettersArray[2].guessed = true;
 
-console.log("Guessed this word: ", currentWord.display());
+gameLoop = function() {};
+
+console.log("Guess this word: ", currentWord.display());
+
 
 //notes
 //loop thru array and compare letters with guessed, then turn to true
@@ -32,35 +35,27 @@ console.log("Guessed this word: ", currentWord.display());
 //check if solved; see if word is solves, use loop to check if all guesses ar true, then restart game?
 
 //begin question logic
-// var questionsArr = [{
-//     name: "guess",
-//     type: "input",
-//     message: "what's your guess?",
-//   },
-//
-//   {
-//     name: "playAgain",
-//     type: "prompt",
-//     message: "what's your guess?",
-//   }
-//
-// ];
+var questionsArr = [{
+    name: "guess",
+    type: "input",
+    message: "what's your guess?",
+  },
 
+  {
+    name: "playAgain",
+    type: "confirm",
+    message: "would you like to play again?",
+    choices: ["yes", "no"],
+    default: "yes"
+  }
 
+];
 
-// inquirer.prompt(questionsArr).then(answers => {
-//
-//   // if (questionsArr.guess === parseString(word.length)) {}
-//
-//   // console.log(JSON.stringify(answers, null, 2));
-//
-// });
+inquirer.prompt(questionsArr).then(answers => {
+
+  // if (questionsArr.guess === parseString(word.length)) {}
+  //
+  // console.log(JSON.stringify(answers, null, 2));
+
+});
 //end question logic
-
-//testing
-// var str = "I have many cars";
-// while (str.indexOf(' ') > 0) {
-//   str = str.replace(' ', '');
-// }
-// var strLength = str.length;
-// console.log(strLength);
