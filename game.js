@@ -45,7 +45,6 @@ var questionsArr = [{
     name: "playAgain",
     type: "confirm",
     message: "would you like to play again?",
-    choices: ["yes", "no"],
     default: "yes"
   }
 
