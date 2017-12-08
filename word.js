@@ -31,12 +31,17 @@ Word.prototype.display = function() {
 //loop thru array and compare letters with guessed, then turn to true
 //create search method for this.
 
-// Word.prototype.search = function() {
-//   for (var i = 0; i < this.lettersArray.length; i++) {
-//     if (this.guess === true) {
-//       return this.letter;
-//     }
-//   }
-// }; //end search method
+this.checkLetter = function(guessLet) {
+  var toReturn = 0;
+
+  for (var i = 0; i < this.myArr.length; i++) {
+    if (this.myArr[i].letter == guessed) {
+      this.myArr[i].appear = true;
+      toReturn++;
+    }
+  }
+  return toReturn;
+};
+
 
 module.exports = Word;

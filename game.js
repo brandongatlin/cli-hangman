@@ -12,7 +12,8 @@ var guessesLeft;
 // var grape = new Word(5);
 // var pineapple = new Word(9);
 
-
+console.log("Welcome to Brandon's fruity HANGMAN; guess the fruit.");
+console.log("-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - ");
 
 var wordArray = ["apple", "banana", "plum", "pear", "grape", "pineapple"];
 
@@ -20,41 +21,47 @@ var randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
 
 var currentWord = new Word(randomWord);
 
-var randomWordLength = randomWord.length;
+// var randomWordLength = randomWord.length;
 
 // currentWord.lettersArray[2].guessed = true;
 
-gameLoop = function() {};
+gameLoop = function() {
+  console.log("Guess this word: ", currentWord.display());
 
-console.log("Guess this word: ", currentWord.display());
+
+  //notes
+  //loop thru array and compare letters with guessed, then turn to true
+  //create search method for this.
+  //check if solved; see if word is solves, use loop to check if all guesses ar true, then restart game?
+
+  //begin question logic
+  var questionsArr = [{
+      name: "guess",
+      type: "input",
+      message: "what's your guess?",
+    },
+
+    {
+      name: "playAgain",
+      type: "confirm",
+      message: "would you like to play again?",
+      default: "yes"
+    }
+
+  ];
 
 
-//notes
-//loop thru array and compare letters with guessed, then turn to true
-//create search method for this.
-//check if solved; see if word is solves, use loop to check if all guesses ar true, then restart game?
+  inquirer.prompt(questionsArr).then(answers => {
 
-//begin question logic
-var questionsArr = [{
-    name: "guess",
-    type: "input",
-    message: "what's your guess?",
-  },
+    console.log("Guess this word: ", currentWord.display());
 
-  {
-    name: "playAgain",
-    type: "confirm",
-    message: "would you like to play again?",
-    default: "yes"
-  }
+    // if (questionsArr.guess === parseString(word.length)) {}
+    //
+    // console.log(JSON.stringify(answers, null, 2));
 
-];
+  });
+  //end question logic
 
-inquirer.prompt(questionsArr).then(answers => {
+};
 
-  // if (questionsArr.guess === parseString(word.length)) {}
-  //
-  // console.log(JSON.stringify(answers, null, 2));
-
-});
-//end question logic
+gameLoop();

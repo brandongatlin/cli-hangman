@@ -9,7 +9,7 @@ Letter.prototype.display = function() {
   if (this.guessed === true) {
     return this.letter;
   } else {
-    return ("*");
+    return (" * ");
   }
 };
 
